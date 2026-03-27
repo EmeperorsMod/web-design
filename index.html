@@ -18,9 +18,9 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kenaliKami">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -28,23 +28,28 @@
 
     <header id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background: turquoise; height: 500px;">
+            
+            <div class="carousel-item active">
+                <img class="introImg" src="assets/PBK-Hiking.webp" alt="Hiking at Bukit Keluang">
                 <div class="carousel-caption">
-                    <h1>Discover Hidden Gems</h1>
+                    <h1>Discover Bukit Keluang</h1>
                     <p>Experience the beauty of our local landscape.</p>
                 </div>
             </div>
-            <div class="carousel-item" style="background: greenyellow; height: 500px;">
+
+            <div class="carousel-item">
+                <img class="introImg" src="assets/bukit2.jpeg" alt="Besut Local Culture">
                 <div class="carousel-caption">
-                    <h1>Local Culture</h1>
-                    <p>Join our community festivals and events.</p>
+                    <h1>Explore Place</h1>
+                    <p>Find place you want to go.</p>
                 </div>
             </div>
+
         </div>
     </header>
 
     <main class="container my-5">
-        <h2 class="text-center mb-4">Featured Destinations</h2>
+        <h2 class="text-center mb-4" id="destinations">Featured Destinations</h2>
         <div class="row g-4">
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card glass-morphism h-100">
@@ -98,25 +103,25 @@
                             </div>
 
                             <div class="carousel-inner">
-                                <div class="carousel-item active" data-bs-interval="3000">
+                                <div class="gambarAboutUs carousel-item active" data-bs-interval="3000">
                                     <img src="assets/gambar (1).jpeg" class="d-block w-100 img-fluid" alt="gambar 1">
                                 </div>
-                                <div class="carousel-item" data-bs-interval="3000">
+                                <div class="gambarAboutUs carousel-item" data-bs-interval="3000">
                                     <img src="assets/gambar (2).jpeg" class="d-block w-100 img-fluid" alt="gambar 2">
                                 </div>
-                                <div class="carousel-item" data-bs-interval="3000">
+                                <div class="gambarAboutUs carousel-item" data-bs-interval="3000">
                                     <img src="assets/gambar (3).jpeg" class="d-block w-100 img-fluid" alt="gambar 3">
                                 </div>
-                                <div class="carousel-item" data-bs-interval="3000">
+                                <div class="gambarAboutUs carousel-item" data-bs-interval="3000">
                                     <img src="assets/gambar (4).jpeg" class="d-block w-100 img-fluid" alt="gambar 4">
                                 </div>
-                                <div class="carousel-item" data-bs-interval="3000">
+                                <div class="gambarAboutUs carousel-item" data-bs-interval="3000">
                                     <img src="assets/gambar (5).jpeg" class="d-block w-100 img-fluid" alt="gambar 5">
                                 </div>
-                                <div class="carousel-item" data-bs-interval="3000">
+                                <div class="gambarAboutUs carousel-item" data-bs-interval="3000">
                                     <img src="assets/gambar (6).jpeg" class="d-block w-100 img-fluid" alt="gambar 6">
                                 </div>
-                                <div class="carousel-item" data-bs-interval="3000">
+                                <div class="gambarAboutUs carousel-item" data-bs-interval="3000">
                                     <img src="assets/gambar (7).jpeg" class="d-block w-100 img-fluid" alt="gambar 7">
                                 </div>
                             </div>
@@ -146,7 +151,7 @@
                             perkhidmatan e-hailing biasa, kami adalah komuniti. Kami hadir sebagai solusi untuk merapatkan jurang antara kampus
                             dan bandar.</p>
 
-                        <p style="text-align: justify;">Sama ada korang dari PBT, IPG Sultan Mizan, KV Besut, mahupun MRSM Kota Putera, 
+                        <p style="text-align: justify;">Sama ada korang dari PBT, IPG Sultan Mizan, KV Besut, mahupun MRSM Kota Putra, 
                             POLIRIDE sedia membawa korang bergerak dengan selamat, cepat, dan yang paling penting, harga mampu milik 
                             (student price!). Tak perlu lagi pening kepala tunggu transport yang tak pasti. Dengan POLIRIDE, perjalanan korang 
                             jadi lebih mudah, urusan jadi lebih lancar.
@@ -172,6 +177,55 @@
                 </div>
                 <div class="modal-body p-0">
                     <iframe id="mapFrame" src="" width="100%" height="450px" style="border:0; border-radius: 0 0 20px 20px;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content glass-morphism border-0" style="overflow: hidden;">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 p-md-5">
+                    <div class="row g-4">
+                        <div class="col-md-5 border-end border-secondary pe-md-4">
+                            <h2 class="fw-bold mb-4">Contact <span class="text-info">Us</span></h2>
+                            <div class="mb-4">
+                                <p class="text-secondary small mb-1">WhatsApp Kami</p>
+                                <a href="https://wa.me/60136432426" target="_blank" class="text-white text-decoration-none fs-5 fw-bold">
+                                    <i class="bi bi-whatsapp text-info me-2"></i> +60 12-356 7890
+                                </a>
+                            </div>
+                            <div class="mb-4">
+                                <p class="text-secondary small mb-1">Waktu Operasi</p>
+                                <p class="mb-0">10:00 AM - 10:00 PM</p>
+                                <p class="small text-info">7 Hari Seminggu</p>
+                            </div>
+                            <div class="social-links mt-4">
+                                <a href="#" class="text-white me-3 fs-4"><i class="bi bi-instagram"></i></a>
+                                <a href="#" class="text-white me-3 fs-4"><i class="bi bi-tiktok"></i></a>
+                                <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-7 ps-md-4">
+                            <h4 class="mb-3">Send a Quick Message</h4>
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Nama Anda" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="tel" class="form-control" placeholder="Nombor Telefon" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="4" placeholder="Apa yang boleh kami bantu?" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100 py-2">Hantar Mesej</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,24 @@
+/* Glass Form Inputs */
+.form-control, .form-select {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    backdrop-filter: blur(5px);
+}
+
+.form-control:focus, .form-select:focus {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: #00d2ff !important;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+}
+
+/* Fix for placeholder color */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Custom background for the select dropdown options */
+.form-select option {
+    background: #1a1a1a;
+    color: white;
+}

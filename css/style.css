@@ -95,8 +95,47 @@ body {
     color: #00d2ff;
 }
 
-/* Standardizing all images inside any carousel-inner */
-.carousel-inner img {
+/* Hero Carousel Image Styling */
+#heroCarousel .carousel-item {
+    height: 500px;
+    background: #000; /* Fallback color while image loads */
+    overflow: hidden;
+}
+
+#heroCarousel .carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+    object-fit: cover; /* This is the "magic" property */
+    object-position: center;
+    opacity: 0.7; /* Darkens the image slightly to make text more readable */
+    transition: transform 0.5s ease;
+}
+
+/* Optional: Slight zoom effect when the slide is active */
+#heroCarousel .carousel-item.active img {
+    transform: scale(1.05);
+}
+
+/* Improving Caption Contrast on top of images */
+#heroCarousel .carousel-caption {
+    background: rgba(0, 0, 0, 0.4); /* Glassy overlay for the text */
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    bottom: 25%;
+}
+
+#heroCarousel .carousel-caption h1 {
+    font-weight: 800;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: #00d2ff; /* Your PoliRide signature cyan */
+}
+
+.gambarAboutUs img {
     width: 100%;
     height: 450px;           /* Fixed height for consistency */
     object-fit: cover;       /* Crops image to fill area without stretching */
@@ -119,9 +158,35 @@ body {
     }
 }
 
+/* Modal Glass Styling */
+.modal-content.glass-morphism {
+    background: rgba(15, 32, 39, 0.293); /* Slightly darker for readability */
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Modal Backdrop Transparency */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+/* Ensure form controls look consistent in the popup */
+#contactModal .form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+#contactModal .form-control:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #00d2ff;
+    box-shadow: none;
+}
+
 /* Footer */
 footer {
-    background: rgba(0, 0, 0, 0.4) !important;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2b5876);
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #aaa;
