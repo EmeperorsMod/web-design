@@ -1,0 +1,19 @@
+/* rout.html specific style */
+html, body {
+    background: transparent !important; /* Makes the page see-through */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents double scrollbars in the iframe */
+}
+
+#map {
+    height: 400px; /* Map takes full height of the iframe */
+    width: 100%;
+    background: transparent !important;
+    border-radius: 15px; /* Optional: gives the map rounded corners */
+}
+
+/* Make Leaflet tiles slightly transparent to show your main background through them */
+.leaflet-container {
+    background: rgba(0, 0, 0, 0) !important;
+}

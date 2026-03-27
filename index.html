@@ -47,29 +47,31 @@
         <h2 class="text-center mb-4">Featured Destinations</h2>
         <div class="row g-4">
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
+                <div class="card glass-morphism h-100">
                     <div class="card-body">
-                        <h5 class="card-title">The Old Forest</h5>
+                        <h5 class="card-title">Bukit Keluang</h5>
                         <p class="card-text">Perfect for weekend hiking and nature photography.</p>
-                        <a href="destinations.html" class="btn btn-primary">Learn More</a>
+                        <a href="route.html?to=bukitkeluang" class="btn btn-primary">View Route</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
+                <div class="card glass-morphism h-100">
                     <div class="card-body">
-                        <h5 class="card-title">Downtown Market</h5>
-                        <p class="card-text">Taste the best local organic produce every Saturday.</p>
-                        <a href="destinations.html" class="btn btn-primary">Learn More</a>
+                        <h5 class="card-title">Bandar Jerteh</h5>
+                        <p class="card-text">The big town for shopping and essentials.</p>
+                        <a href="route.html?to=jerteh" class="btn btn-primary">View Route</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card">
+                <div class="card glass-morphism h-100">
                     <div class="card-body">
-                        <h5 class="card-title">Riverside Walk</h5>
+                        <h5 class="card-title">Pantai Bukit Keluang</h5>
                         <p class="card-text">A peaceful path for evening strolls and cycling.</p>
-                        <a href="destinations.html" class="btn btn-primary">Learn More</a>
+                        <a href="route.html?to=pantai" class="btn btn-primary">View Route</a>
                     </div>
                 </div>
             </div>
@@ -160,6 +162,39 @@
             <p>&copy; 2026 Local Community Initiative. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <div class="modal fade" id="mapModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content glass-morphism" style="border: 1px solid rgba(255,255,255,0.2);">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-info" id="modalTitle">Route Map</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe id="mapFrame" src="" width="100%" height="450px" style="border:0; border-radius: 0 0 20px 20px;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update card links to open the modal instead of a new page
+            document.querySelectorAll('a[href^="route.html"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const destinationUrl = this.getAttribute('href');
+                    const locationName = this.parentElement.querySelector('.card-title').innerText;
+                    
+                    // Update Modal Title and iFrame Source
+                    document.getElementById('modalTitle').innerText = "Route to " + locationName;
+                    document.getElementById('mapFrame').src = destinationUrl;
+                    
+                    // Show the Modal
+                    var myModal = new bootstrap.Modal(document.getElementById('mapModal'));
+                    myModal.show();
+                });
+            });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
