@@ -1,0 +1,56 @@
+/* Custom Glass Theme for POLIRIDE */
+body {
+    background: linear-gradient(45deg, #0f2027, #203a43, #2b5876); /* Deep blue gradient */
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Glass Card Effect */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Navbar Update */
+.navbar {
+    background: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Card Styling */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Button Styling */
+.btn-primary {
+    background: rgba(0, 123, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.btn-primary:hover {
+    background: rgba(0, 123, 255, 0.7);
+}
+
+/* Footer Styling */
+footer {
+    background: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(10px);
+    color: rgba(255, 255, 255, 0.7);
+}
