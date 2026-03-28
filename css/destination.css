@@ -2,11 +2,8 @@ html, body {
     background: transparent !important; /* Makes the page see-through */
     margin: 0;
     padding: 0;
-    /*overflow: auto;*/
     font-family: Arial;
     color: white;
-
-    /*overflow*/
     overflow: -moz-scrollbars-none; /* Old Firefox */
     scrollbar-width: none;          /* Modern Firefox */
     -ms-overflow-style: none;       /* IE/Edge */
