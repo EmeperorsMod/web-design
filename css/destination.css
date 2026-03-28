@@ -1,0 +1,32 @@
+html, body {
+    background: transparent !important; /* Makes the page see-through */
+    margin: 0;
+    padding: 0;
+    /*overflow: auto;*/
+    font-family: Arial;
+    color: white;
+
+    /*overflow*/
+    overflow: -moz-scrollbars-none; /* Old Firefox */
+    scrollbar-width: none;          /* Modern Firefox */
+    -ms-overflow-style: none;       /* IE/Edge */
+}
+
+#map {
+    height: 500px;
+    border-radius: 10px;
+}
+
+/* This targets the element that is overflowing (usually the body or a div) */
+.scrollable-element {
+    /* Standard property for Firefox */
+    scrollbar-width: none; 
+    
+    /* Standard property for IE/Edge */
+    -ms-overflow-style: none; 
+}
+
+/* This targets Chrome, Safari, and newer versions of Edge */
+.scrollable-element::-webkit-scrollbar {
+    display: none;
+}

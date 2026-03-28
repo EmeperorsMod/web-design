@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoliRide Route</title>
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!--leaflet Map-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <link rel="stylesheet" href="css/destination.css"/>
+</head>
+
+<body>
+    <!--Nav>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">PoliRide</a>
+
+        </div>
+    </nav-->
+
+    <div class="container my-5">
+        <!--h2 class="text-center mb-4">PoliRide Route</h2-->
+
+        <!--Map-->
+        <div id="map"></div>
+
+        <div class="mt-6">
+            <h5 class="text-xl font-semibold mb-4">Bus Stops: Politeknik → Kota Bharu</h5>
+            <p class="mb-6 text-gray-700">
+                Main stops along the route from Politeknik Besut to Kota Bharu Bus Terminal - ideal for students and
+                Locals planning their trip. Key stops include Kampung Raja (Politeknik Besut area) and BHP Kuala Besut,
+                providing convenient access for commuters and visitors alike.
+            </p>
+
+            <div class="space-y-4">
+                <div class="p-4 border rounded-lg shadow sm hover:shadow-md transition durration-200">
+                    <div class="flex items-center mb-2">
+                        <span class="material-icons text-blue-500 mr-2">directions</span>
+                        <h6 class="font-semibold text-gray-800">Kampung Raja (Politeknik Besut)</h6>
+
+                    </div>
+
+                    <p class="text-gray-600 text-sm">
+                        Main stop Politeknik Besut, ideal for students and staff starting their journey
+                    </p>
+                </div>
+
+                <div class="p-4 border rounded-lg shadow sm hover:shadow-md transition durration-200">
+                    <div class="flex items-center mb-2">
+                        <span class="material-icons text-blue-500 mr-2">directions</span>
+                        <h6 class="font-semibold text-gray-800">IPG Kampus Sultan Mizan</h6>
+
+                    </div>
+
+                    <p class="text-gray-600 text-sm">
+                        Sec stop IPG, ideal for students and staff continue their journey
+                    </p>
+                </div>
+
+                <div class="p-4 border rounded-lg shadow sm hover:shadow-md transition durration-200">
+                    <div class="flex items-center mb-2">
+                        <span class="material-icons text-blue-500 mr-2">directions</span>
+                        <h6 class="font-semibold text-gray-800">BHP Kuala Besut</h6>
+
+                    </div>
+
+                    <p class="text-gray-600 text-sm">
+                        Main stop BHP Kuala Besut, ideal for local residents and travelers to catch connecting services
+                    </p>
+                </div>
+
+                <div class="p-4 border rounded-lg shadow sm hover:shadow-md transition durration-200">
+                    <div class="flex items-center mb-2">
+                        <span class="material-icons text-blue-500 mr-2">directions</span>
+                        <h6 class="font-semibold text-gray-800">Tok Bali</h6>
+
+                    </div>
+
+                    <p class="text-gray-600 text-sm">
+                        Midway stop towards Kelatan, good for short breaks or transfers
+                    </p>
+                </div>
+                <div class="p-4 border rounded-lg shadow sm hover:shadow-md transition durration-200">
+                    <div class="flex items-center mb-2">
+                        <span class="material-icons text-blue-500 mr-2">directions</span>
+                        <h6 class="font-semibold text-gray-800">Pasir Puteh</h6>
+
+                    </div>
+
+                    <p class="text-gray-600 text-sm">
+                        Local stop before reaching Kota Bharu town, often used by cummuters from nearby villages
+                    </p>
+                </div>
+
+                <div class="p-4 border rounded-lg shadow sm hover:shadow-md transition durration-200">
+                    <div class="flex items-center mb-2">
+                        <span class="material-icons text-blue-500 mr-2">directions</span>
+                        <h6 class="font-semibold text-gray-800">Kota Bharu Bus Terminal</h6>
+
+                    </div>
+
+                    <p class="text-gray-600 text-sm">
+                        Main bus terminal in the heart of Kota Bharu, where most long-distance and local terminate
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--leaflet js -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+        <script>
+            // Initialize the map
+            var map = L.map('map').setView([5.383, 103.102], 13);
+
+            //map layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            //Locations
+            var PoliteknikBesut = [5.794, 102.598];
+            var IPGKampusSultanMizan = [5.801, 102.594];
+            var BHPKualaBesut = [5.837, 102.535];
+            var TokBali = [5.897, 102.474];
+            var PasirPuteh = [5.833, 102.388];
+            var KotaBharuBusTerminal = [6.112, 102.229];
+
+            var coveragePoints = [
+                [5.829556041729953, 102.55654475229376],
+                [5.81821077207081, 102.59871842755176],  
+                [5.735585919537769, 102.65423890326265], 
+                [5.703176850955194, 102.5377919183996],  
+                [5.739745582112468, 102.4854912539284]   
+        ]
+            //Add markers
+            L.marker(PoliteknikBesut).addTo(map).bindPopup('Kampung Raja (Politeknik Besut)').openPopup();
+            L.marker(IPGKampusSultanMizan).addTo(map).bindPopup('IPG Kampus Sultan Mizan');
+            L.marker(BHPKualaBesut).addTo(map).bindPopup('BHP Kuala Besut');
+            L.marker(TokBali).addTo(map).bindPopup('Tok Bali');
+            L.marker(PasirPuteh).addTo(map).bindPopup('Pasir Puteh');
+            L.marker(KotaBharuBusTerminal).addTo(map).bindPopup('Kota Bharu Bus Terminal');
+
+            var polyStyle = {
+                color: '#007bff',
+                weight: 3,
+                fillColor: '#007bff',
+                fillOpacity: 0.15,
+                dashArray: '5, 10'
+            };
+
+            var zone = L.polygon(coveragePoints, polyStyle).addTo(map);
+
+
+
+        </script>
+    </div>
+</body>
+
+</html>

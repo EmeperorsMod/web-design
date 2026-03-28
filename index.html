@@ -81,6 +81,16 @@
                 </div>
             </div>
         </div>
+        <center>
+
+            <div class="card glass-morphism h-100 MapDescription">
+                <div class="card-body">
+                    <h5 class="card-title">View Full Destination</h5>
+                    <p class="card-text">Get all destination you can go.</p>
+                    <a href="#"  data-bs-toggle="modal" data-bs-target="#FullMap" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </center>
     </main>
 
     <!--About us-->
@@ -164,10 +174,26 @@
 
     <footer class="bg-light py-4 border-top">
         <div class="container text-center">
-            <p>&copy; 2026 Local Community Initiative. All Rights Reserved.</p>
+            <p>&copy; 2026 Poliride. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!--Full Map Pop Up-->
+    <div class="modal fade" id="FullMap" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content glass-morphism" style="border: 1px solid rgba(255,255,255,0.2);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe src="destination.html" width="100%" height="450px"></iframe>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--minimap-->
     <div class="modal fade" id="mapModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content glass-morphism" style="border: 1px solid rgba(255,255,255,0.2);">
@@ -182,6 +208,7 @@
         </div>
     </div>
 
+    <!--contact pop up-->
     <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content glass-morphism border-0" style="overflow: hidden;">
@@ -194,7 +221,7 @@
                             <h2 class="fw-bold mb-4">Contact <span class="text-info">Us</span></h2>
                             <div class="mb-4">
                                 <p class="text-secondary small mb-1">WhatsApp Kami</p>
-                                <a href="https://wa.me/60136432426" target="_blank" class="text-white text-decoration-none fs-5 fw-bold">
+                                <a href="#" target="_blank" class="text-white text-decoration-none fs-5 fw-bold">
                                     <i class="bi bi-whatsapp text-info me-2"></i> +60 12-356 7890
                                 </a>
                             </div>
